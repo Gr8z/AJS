@@ -12,8 +12,4 @@ public class MainMenu : MonoBehaviour
     public void QuitSimulation() {
         Application.Quit();
     }
-
-    public void debug() {
-        Debug.Log("TEST");
-    }
 }

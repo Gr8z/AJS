@@ -619,7 +619,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155876632}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -632,7 +632,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -83, y: -116}
+  m_AnchoredPosition: {x: -83, y: -115.999985}
   m_SizeDelta: {x: 166, y: 31.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &155876634
@@ -1756,7 +1756,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.486, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2709,7 +2709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &763671620
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2733,8 +2733,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 7, y: -3}
+  m_SizeDelta: {x: 1011.3, y: 592}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &763671621
 MonoBehaviour:
@@ -2745,9 +2745,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 763671619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0379d570de376b479dbb30da1af81a8, type: 3}
+  m_Script: {fileID: 11500000, guid: b0ec91cddaba0304eb5e859a5866e3c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speedSlider: {fileID: 25654733}
+  enableSmallVehicles: {fileID: 1688745546}
+  enableBusses: {fileID: 1262351120}
+  enableTrucks: {fileID: 586251321}
+  enableAudio: {fileID: 1646919028}
+  numRoads: {fileID: 653661032}
+  numLanes: {fileID: 155876634}
 --- !u!1 &798475556
 GameObject:
   m_ObjectHideFlags: 0
@@ -5866,6 +5873,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 763671621}
+        m_MethodName: clickDone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1734459308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6089,8 +6107,8 @@ RectTransform:
   m_Father: {fileID: 1448211941}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.486, y: 0}
-  m_AnchorMax: {x: 0.486, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6374,7 +6392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1840128273
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6816,8 +6834,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -161, y: 254}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -145, y: -8}
+  m_SizeDelta: {x: 299.8, y: -13}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1991599538
 MonoBehaviour:
