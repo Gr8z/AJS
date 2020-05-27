@@ -42,4 +42,11 @@ public class OptionsMenu : MonoBehaviour
     PlayerPrefs.SetInt("numRoads", numRoads.value + 2);
     PlayerPrefs.SetInt("numLanes", numLanes.value + 2);
   }
+
+  public void ToggleSound()
+  {
+    int isOn = enableAudio.isOn ? 1 : 0;
+    PlayerPrefs.SetInt("enableAudio", isOn);
+    AudioListener.volume = isOn;
+  }
 }
