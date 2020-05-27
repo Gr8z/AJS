@@ -27,7 +27,7 @@ public class OptionsMenu : MonoBehaviour
     enableAudio.isOn = (PlayerPrefs.GetInt("enableAudio") == 1) ? true : false;
 
     numRoads.value = PlayerPrefs.GetInt("numRoads") - 2;
-    numLanes.value = PlayerPrefs.GetInt("numLanes") - 2;
+    numLanes.value = (PlayerPrefs.GetInt("numLanes") / 2) - 1;
   }
 
   public void clickDone()
@@ -40,7 +40,7 @@ public class OptionsMenu : MonoBehaviour
 
     // Pad the values by 2 sinces there is no 0 and 1.
     PlayerPrefs.SetInt("numRoads", numRoads.value + 2);
-    PlayerPrefs.SetInt("numLanes", numLanes.value + 2);
+    PlayerPrefs.SetInt("numLanes", (numLanes.value + 1) * 2);
   }
 
   public void ToggleSound()
