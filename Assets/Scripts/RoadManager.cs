@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RoadManager : MonoBehaviour
 {
@@ -8,7 +9,6 @@ public class RoadManager : MonoBehaviour
   public GameObject FourLaneSystem;
   public GameObject SixLaneSystem;
 
-  // Start is called before the first frame update
   void Start()
   {
     int numLanes = PlayerPrefs.GetInt("numLanes");
@@ -20,6 +20,15 @@ public class RoadManager : MonoBehaviour
       case 6: { SixLaneSystem.SetActive(true); break; }
 
       default: break;
+    }
+  }
+
+  void Update()
+  {
+    // Load MainMenu if you press the ESC key.
+    if (Input.GetKeyDown(KeyCode.Escape))
+    {
+      SceneManager.LoadScene("Menu");
     }
   }
 }
