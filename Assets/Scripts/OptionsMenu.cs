@@ -7,6 +7,7 @@ using TMPro;
 public class OptionsMenu : MonoBehaviour
 {
   public Slider speedSlider;
+  public Text sliderText;
 
   public Toggle enableSmallVehicles;
   public Toggle enableBusses;
@@ -49,4 +50,9 @@ public class OptionsMenu : MonoBehaviour
     PlayerPrefs.SetInt("enableAudio", isOn);
     AudioListener.volume = isOn;
   }
+
+  public void UpdateSpeedValue()
+    {
+    	sliderText.text = speedSlider.value.ToString() + " km/hr";
+    }
 }
