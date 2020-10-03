@@ -10,32 +10,38 @@ public class FlyCamera : MonoBehaviour
 
     Mouse : Drag Camera
     WASD  : Directional movement
+    Scroll: Zooming
     Shift : Increase speed
-    Space : Moves camera directly up per its local Y-axis
   */
 
-  //
+
   // VARIABLES
-  //
 
   private Vector3 mouseOrigin;  // Position of cursor when mouse dragging starts
 
   private bool isPanning;   // Is the camera being panned?
   private bool isRotating;  // Is the camera being rotated?
-  private bool isZooming;   // Is the camera zooming?
-
   public float turnSpeed = 10.0f;  // Speed of camera turning when mouse moves in along an axis
   float mainSpeed = 50.0f;        //regular speed
   float shiftAdd = 60.0f;         //multiplied by how long shift is held.  Basically running
   float maxShift = 100.0f;        //Maximum speed when holdin gshift
   private float totalRun = 1.0f;
+  public Camera cam;              // A placeholder for a reference to the camera in the scene
+  public float zoomSpeed = 4.0f;  // Camera zoom speed
+  private float zoomMin = -1.0f;  // Minimum distance between the camera and target
+  private float zoomMax = 1.0f;   // Maximum distance between the camera and target
 
-  //
-  // UPDATE
-  //
+
+  void Start()
+  {
+    // On start, get a reference to the Main Camera
+    cam = Camera.main;
+  }
 
   void Update()
   {
+    Zoom();
+    
     // Get the left mouse button
     if (Input.GetMouseButtonDown(0))
     {
@@ -44,8 +50,10 @@ public class FlyCamera : MonoBehaviour
       isRotating = true;
     }
 
+
     // Disable movements on button release
     if (!Input.GetMouseButton(0)) isRotating = false;
+
 
     // Rotate camera along X and Y axis
     if (isRotating)
@@ -55,6 +63,7 @@ public class FlyCamera : MonoBehaviour
       transform.RotateAround(transform.position, transform.right, -pos.y * turnSpeed);
       transform.RotateAround(transform.position, Vector3.up, pos.x * turnSpeed);
     }
+
 
     // Keyboard commands
     Vector3 p = GetBaseInput();
@@ -74,19 +83,9 @@ public class FlyCamera : MonoBehaviour
     }
 
     p = p * Time.deltaTime;
-    Vector3 newPosition = transform.position;
-    if (Input.GetKey(KeyCode.Space))
-    {
-      //If player wants to move on X and Z axis only
-      transform.Translate(p);
-      newPosition.x = transform.position.x;
-      newPosition.z = transform.position.z;
-      transform.position = newPosition;
-    }
-    else
-    {
-      transform.Translate(p);
-    }
+
+    transform.Translate(p);
+    
   }
 
   private Vector3 GetBaseInput()
@@ -111,5 +110,31 @@ public class FlyCamera : MonoBehaviour
     }
     return p_Velocity;
   }
+
+  void Zoom()
+  {
+
+    // Local variable to temporarily store our camera's position
+    Vector3 camPos = cam.transform.position;
+
+    // Local variable to store the distance of the camera from the camera_target
+    float distance = Vector3.Distance(transform.position, cam.transform.position);
+
+    // When we scroll our mouse wheel up, zoom in if the camera is not within the minimum distance (set by our zoomMin variable)
+    if (Input.GetAxis("Mouse ScrollWheel") > 0f && distance > zoomMin)
+    {
+      camPos += cam.transform.forward * zoomSpeed * Time.deltaTime;
+    }
+
+    // When we scroll our mouse wheel down, zoom out if the camera is not outside of the maximum distance (set by our zoomMax variable)
+    if (Input.GetAxis("Mouse ScrollWheel") < 0f && distance < zoomMax)
+    {
+      camPos -= cam.transform.forward * zoomSpeed * Time.deltaTime;
+    }
+
+    // Set the camera's position to the position of the temporary variable
+    cam.transform.position = camPos;
+  }
+
 
 }

@@ -124,18 +124,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!134 &1410511
-PhysicMaterial:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: GSDPavement (Instance) (Instance)
-  dynamicFriction: 1
-  staticFriction: 2
-  bounciness: 0
-  frictionCombine: 0
-  bounceCombine: 0
 --- !u!850595691 &3629437
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -4391,9 +4379,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3045ccaff8af5b945aaa81275a3b903a, type: 2}
   ShoulderCutR_marker_Mats: []
   ShoulderCutL_marker_Mats: []
-  RoadCut_PhysicMat: {fileID: 1862792851}
-  ShoulderCutR_PhysicMat: {fileID: 497392873}
-  ShoulderCutL_PhysicMat: {fileID: 898991203}
+  RoadCut_PhysicMat: {fileID: 0}
+  ShoulderCutR_PhysicMat: {fileID: 0}
+  ShoulderCutL_PhysicMat: {fileID: 0}
 --- !u!4 &206268141
 Transform:
   m_ObjectHideFlags: 1
@@ -9378,18 +9366,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!134 &497392873
-PhysicMaterial:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: GSDDirt (Instance) (Instance) (Instance) (Instance)
-  dynamicFriction: 0.4
-  staticFriction: 0.4
-  bounciness: 0
-  frictionCombine: 0
-  bounceCombine: 0
 --- !u!1001 &509740751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17302,18 +17278,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 145941219}
---- !u!134 &898991203
-PhysicMaterial:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: GSDDirt (Instance) (Instance) (Instance) (Instance)
-  dynamicFriction: 0.4
-  staticFriction: 0.4
-  bounciness: 0
-  frictionCombine: 0
-  bounceCombine: 0
 --- !u!43 &901454939
 Mesh:
   m_ObjectHideFlags: 0
@@ -18501,7 +18465,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 34.265106
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -18546,6 +18510,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 4
+  cam: {fileID: 0}
+  zoomSpeed: 75
 --- !u!4 &973017638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400008, guid: 8c0d3ec158da44243ba5b690ea7035d9,
@@ -19782,18 +19748,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!134 &1087783448
-PhysicMaterial:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: GSDDirt (Instance) (Instance)
-  dynamicFriction: 0.4
-  staticFriction: 0.4
-  bounciness: 0
-  frictionCombine: 0
-  bounceCombine: 0
 --- !u!1 &1087971959
 GameObject:
   m_ObjectHideFlags: 0
@@ -35515,9 +35469,9 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3045ccaff8af5b945aaa81275a3b903a, type: 2}
   ShoulderCutR_marker_Mats: []
   ShoulderCutL_marker_Mats: []
-  RoadCut_PhysicMat: {fileID: 1410511}
-  ShoulderCutR_PhysicMat: {fileID: 1087783448}
-  ShoulderCutL_PhysicMat: {fileID: 2122671523}
+  RoadCut_PhysicMat: {fileID: 0}
+  ShoulderCutR_PhysicMat: {fileID: 0}
+  ShoulderCutL_PhysicMat: {fileID: 0}
 --- !u!4 &1725755868
 Transform:
   m_ObjectHideFlags: 1
@@ -38943,18 +38897,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!134 &1862792851
-PhysicMaterial:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: GSDPavement (Instance) (Instance) (Instance) (Instance)
-  dynamicFriction: 1
-  staticFriction: 2
-  bounciness: 0
-  frictionCombine: 0
-  bounceCombine: 0
 --- !u!1 &1866681328
 GameObject:
   m_ObjectHideFlags: 0
@@ -43199,18 +43141,6 @@ Transform:
   m_Father: {fileID: 345922636}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!134 &2122671523
-PhysicMaterial:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: GSDDirt (Instance) (Instance)
-  dynamicFriction: 0.4
-  staticFriction: 0.4
-  bounciness: 0
-  frictionCombine: 0
-  bounceCombine: 0
 --- !u!1 &2126444183
 GameObject:
   m_ObjectHideFlags: 0
