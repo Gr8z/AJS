@@ -21,7 +21,5 @@ public class VehicleSpawner : MonoBehaviour
     GameObject randomVehicle = vehicles[Random.Range(0, vehicles.Length)];
     GameObject spawnedVehicle = Instantiate(randomVehicle, transform.position, transform.rotation);
     spawnedVehicle.AddComponent<CarMove>();
-
-    print("A vehicle has spawned");
   }
 }
