@@ -5,18 +5,18 @@ using UnityEngine.UI;
 
 public class CarMove : MonoBehaviour
 {
-	public static int movespeed = 1;
-    public Vector3 userDirection = Vector3.forward;
+  public float movespeed = 0.2f;
+  public Vector3 userDirection = Vector3.forward;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+  // Start is called before the first frame update
+  void Start()
+  {
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Translate(userDirection * movespeed );
-    }
+  }
+
+  // Update is called once per frame
+  void Update()
+  {
+    transform.Translate(userDirection * movespeed);
+  }
 }
