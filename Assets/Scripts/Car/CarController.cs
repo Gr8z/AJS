@@ -422,7 +422,7 @@ public class CarController : MonoBehaviour
     //Divide this value by Time.deltaTime to get [m/s], and multiply it by 3.6 to get [km/h]
     currentSpeed = (distance / Time.fixedDeltaTime) * 3.6f;
 
-    //print("Speed:" + speed + "km/h");
+    //print("Speed:" + currentSpeed + "km/h");
 
     lastPosition = transform.position;
   }
