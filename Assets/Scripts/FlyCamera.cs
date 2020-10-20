@@ -32,6 +32,14 @@ public class FlyCamera : MonoBehaviour
   private float zoomMax = 1.0f;   // Maximum distance between the camera and target
 
 
+  public float minx = 0.0f;
+  public float maxx = 510.0f;
+  public float miny = 3.0f;
+  public float maxy = 800.0f;
+  public float minz = -200.0f;
+  public float maxz = 700.0f;
+
+
   void Start()
   {
     // On start, get a reference to the Main Camera
@@ -40,6 +48,8 @@ public class FlyCamera : MonoBehaviour
 
   void Update()
   {
+
+    transform.position = new Vector3(Mathf.Clamp(transform.position.x, minx, maxx), Mathf.Clamp(transform.position.y, miny, maxy), Mathf.Clamp(transform.position.z, minz, maxz));
     Zoom();
     
     // Get the left mouse button
@@ -84,8 +94,7 @@ public class FlyCamera : MonoBehaviour
 
     p = p * Time.deltaTime;
 
-    transform.Translate(p);
-    
+    transform.Translate(p);    
   }
 
   private Vector3 GetBaseInput()
