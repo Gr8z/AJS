@@ -40,16 +40,32 @@ public class FlyCamera : MonoBehaviour
   public float maxz = 700.0f;
 
 
+  Vector3 startPosition; //vector variable for storing start position of the main camera
+  Quaternion startRotation; //vector variable for storing the start rotation of the main camera
+
+
   void Start()
   {
     // On start, get a reference to the Main Camera
     cam = Camera.main;
+
+    startPosition = transform.position;
+    startRotation = transform.rotation;
   }
 
   void Update()
   {
-
+    //prevents camera from leaving the terrain
     transform.position = new Vector3(Mathf.Clamp(transform.position.x, minx, maxx), Mathf.Clamp(transform.position.y, miny, maxy), Mathf.Clamp(transform.position.z, minz, maxz));
+    
+    //resets camera position and rotation
+    if (Input.GetKey(KeyCode.R))
+    {
+      transform.position = startPosition;
+      transform.rotation = startRotation;
+    }
+
+    //calls zoom function
     Zoom();
     
     // Get the left mouse button

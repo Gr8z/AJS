@@ -19173,6 +19173,12 @@ MonoBehaviour:
   turnSpeed: 4
   cam: {fileID: 0}
   zoomSpeed: 75
+  minx: 0
+  maxx: 510
+  miny: 3
+  maxy: 800
+  minz: -200
+  maxz: 700
 --- !u!43 &966926281
 Mesh:
   m_ObjectHideFlags: 0
