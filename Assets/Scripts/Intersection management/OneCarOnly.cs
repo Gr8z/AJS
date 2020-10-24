@@ -25,8 +25,6 @@ public class OneCarOnly : MonoBehaviour
       intersectionCar.GetComponent<CarController>().hasClearPath = true;
 
       isCarInIntersection = true;
-
-      //TODO We might as well check if a car in a neighboring lane also can be sent forward
     }
 
 

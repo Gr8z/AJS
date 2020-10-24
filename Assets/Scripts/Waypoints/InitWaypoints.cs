@@ -55,11 +55,6 @@ public class InitWaypoints : MonoBehaviour
       //Get the wp where the curve starts
       WaypointData currentWp = spawnWP.nextWp;
 
-      //Draw the first line
-      //Gizmos.color = Color.green;
-
-      //Gizmos.DrawLine(spawnWP.wpPos, currentWp.wpPos);
-
       //Straight line through the intersection
       if (currentWp.nextWp.isCurve == false)
       {
@@ -81,11 +76,6 @@ public class InitWaypoints : MonoBehaviour
 
         Gizmos.DrawLine(currentWp.pos, currentWp.nextWp.pos);
       }
-
-      //The last line
-      //Gizmos.color = Color.green;
-
-      //Gizmos.DrawLine(currentWp.nextWp.wpPos, currentWp.nextWp.nextWp.wpPos);
     }
   }
 

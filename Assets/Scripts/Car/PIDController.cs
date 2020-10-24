@@ -24,11 +24,6 @@ public class PIDController : MonoBehaviour
     //I
     CTE_sum += Time.fixedDeltaTime * CTE;
 
-    //Sometimes better to just sum the last errors
-    //float averageAmount = 20f;
-
-    //CTE_sum = CTE_sum + ((CTE - CTE_sum) / averageAmount);
-
     alpha += tau_I * CTE_sum;
 
 
@@ -38,8 +33,6 @@ public class PIDController : MonoBehaviour
     alpha += tau_D * d_dt_CTE;
 
     CTE_old = CTE;
-
-    //print(alpha);
 
     return alpha;
   }

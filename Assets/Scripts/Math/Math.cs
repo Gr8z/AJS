@@ -43,9 +43,6 @@ public static class Math
     Vector3 b = goingToPos - goingFromPos;
 
     //Vector projection from https://en.wikipedia.org/wiki/Vector_projection
-    //To know if we have passed the upcoming waypoint we need to find out how much of b is a1
-    //a1 = (a.b / |b|^2) * b
-    //a1 = progress * b -> progress = a1 / b -> progress = (a.b / |b|^2)
     float progress = (a.x * b.x + a.y * b.y + a.z * b.z) / (b.x * b.x + b.y * b.y + b.z * b.z);
 
     return progress;

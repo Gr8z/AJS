@@ -35,14 +35,17 @@ public class SpawnCars : MonoBehaviour
 
   void Start()
   {
+
+    Debug.Log("SpawnCars active");
     //Combine all cars into one list
     allCarsList.Add(modelSObj);
     allCarsList.Add(modelXObj);
     allCarsList.Add(roadsterObj);
 
 
-    //Create the spawn point array (8 possible paths)
-    spawnPointsPosInArray = new int[8];
+    //Create the spawn point array
+    int numLanes = PlayerPrefs.GetInt("numLanes");
+    spawnPointsPosInArray = new int[numLanes * 4];
 
     //Fill the array from 0 to 15
     for (int i = 0; i < spawnPointsPosInArray.Length; i++)
@@ -62,9 +65,9 @@ public class SpawnCars : MonoBehaviour
       spawnTimer = 0f;
 
       SpawnCar();
+      Debug.Log("Spawned a car");
     }
 
-    //print(IntersectionManager.allCars.Count);
   }
 
 
@@ -183,15 +186,6 @@ public class SpawnCars : MonoBehaviour
 
       spawnPointsPosInArray[randomIndex] = tmp;
     }
-
-    //Test that the shuffle is working
-    //string numbers = "";
-    //for (int i = 0; i < spawnPointsPosInArray.Length; i++)
-    //{
-    //    numbers += spawnPointsPosInArray[i] + " ";
-    //}
-
-    //print(numbers);
   }
 
 

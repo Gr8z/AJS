@@ -191,34 +191,11 @@ public class CarController : MonoBehaviour
     //Where is the car's steering axle
     Vector3 steerPos = transform.position + transform.forward * distToFrontAxle * 1.0f;
 
-    //How far have we traveled between the waypoints?
-    //float progress = Math.CalculateProgressBetweenWaypoints(steerPos, previousWaypoint.pos, currentWaypoint.pos);
-
-    //If we know how far we are between the waypoints, we can get where we should be
-    //This will make the car behave less drunk than if we would have used the wp we are heading towards?
-    //Vector3 wantedPos = currentWaypoint.pos + progress * (currentWaypoint.pos - previousWaypoint.pos).normalized;
-
     //Get the distance between where the car is and where it should be
     float CTE = Math.GetCrossTrackError(steerPos, previousWaypoint.pos, currentWaypoint.pos);
 
     //Is CTE negative or positive?
     CTE *= Math.DirectionToReachTarget(transform, steerPos, currentWaypoint.pos);
-
-
-    //
-    //Simple with no PID
-    //
-    //Limit the steering angle so the car is not turning with 40 degrees at full speed
-    //float allowedSteeringAngle = LimitSteeringAngle(maxSteeringAngle, speed);
-
-    //Add direction to the steering angle
-    //allowedSteeringAngle *= Math.DirectionToReachTarget(transform, steerPos, wantedPos);
-
-
-    //
-    //With PID
-    //
-    //float allowedSteeringAngle = LimitSteeringAngle(maxSteeringAngle, speed);
 
     //Get the steering angle from the PID controller
     float wantedSteeringAngle = PIDScript.GetSteerFactorFromPIDController(CTE);
@@ -233,19 +210,6 @@ public class CarController : MonoBehaviour
     {
       wantedSteeringAngle = Mathf.Clamp(wantedSteeringAngle, -angleBetween, angleBetween);
     }
-    //if (angleBetween < 8f)
-    //{
-    //    //float newSteeringAngle = 8f;
-
-    //    //if (wantedSteeringAngle < 0f)
-    //    //{
-    //    //    newSteeringAngle *= -1f;
-    //    //}
-
-    //    //wantedSteeringAngle = newSteeringAngle;
-
-    //    wantedSteeringAngle = Mathf.Clamp(wantedSteeringAngle, -maxSteeringAngle, maxSteeringAngle);
-    //}
     //Want to steer as much as possible towards the waypoint
     else
     {

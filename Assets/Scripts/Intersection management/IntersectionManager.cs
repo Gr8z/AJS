@@ -24,7 +24,7 @@ public class IntersectionManager : MonoBehaviour
   public static List<GameObject> emergencyVehicles = new List<GameObject>();
 
   //Lane numbers, so we can find which lane is next to another lane
-  public static int[,] laneCombinations = { { 1 }, { 2 }, { 3 }, { 4 } };
+  public static int[,] laneCombinations = { { 1, 2 }, { 3, 4 }, { 5, 6 }, { 7, 8 } };
 
   //Intersection management methods
   OneCarOnly oneCarOnlyMethod;
@@ -53,16 +53,7 @@ public class IntersectionManager : MonoBehaviour
 
     predictPositionMethod = GetComponent<PredictPosition>();
 
-    //Init
-    //trafficLightsMethod.InitTrafficLights();
 
-    //Vector3 a = Vector3.zero;
-
-    //Rectangle test = new Rectangle(a, a, a, a);
-
-    //print(test.carID);
-
-    //Instantiate a few debug rectangles so we dont have to do it each u
   }
 
 
@@ -80,19 +71,7 @@ public class IntersectionManager : MonoBehaviour
 
         timer = 0f;
       }
-
-
-      //Display all rectangles this time step
-      //DisplayRectangles();
-
-      //Allow one car in the intersection at the time - First-in-first-out
-      //oneCarOnlyMethod.UpdateOneCarOnly();
-
-      //debugSphere.transform.position = carsWaitingForPath[0].transform.position;
     }
-
-    //Simulate traffic lights
-    //trafficLightsMethod.UpdateTrafficLights();
   }
 
 

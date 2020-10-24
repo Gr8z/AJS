@@ -10,9 +10,6 @@ public class PredictPosition : MonoBehaviour
   public float acceleration; //7
                              //Drag force to get a lower acc when driving faster
   public float dragFactor;
-  //Max speed in intersection
-  //public float intersectionSpeedComp; //-15.5
-  //Buffers to make the collision rectangles bigger than the car
   public float frontBuffer;
   public float sideBuffer;
 
@@ -94,9 +91,6 @@ public class PredictPosition : MonoBehaviour
         }
       }
     }
-
-    //Just send forward the first car in the queue
-    //bool test = CanCarFindPath(0);
   }
 
 
@@ -248,9 +242,6 @@ public class PredictPosition : MonoBehaviour
         //Collision so we cant find a path
         else
         {
-          //Exit the loop
-          //print("Failed to find path becuause of collision");
-
           break;
         }
       }

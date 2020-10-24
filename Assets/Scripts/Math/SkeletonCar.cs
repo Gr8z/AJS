@@ -1,15 +1,13 @@
 using UnityEngine;
 using System.Collections;
 
-
-
 /// <summary>
 /// Mathematical methods that simulates a car
 /// </summary>
 public static class SkeletonCar
 {
   /// <summary>
-  /// //Calculate the new position of the car after driving distance d with steering angle beta
+  /// Calculate the new position of the car after driving distance d with steering angle beta
   /// </summary>
   /// <param name="theta">The car's heading (= rotation) [rad]</param>
   /// <param name="beta">Steering angle [rad]</param>
