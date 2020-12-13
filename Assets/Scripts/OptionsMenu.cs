@@ -27,7 +27,7 @@ public class OptionsMenu : MonoBehaviour
     enableTrucks.isOn = (PlayerPrefs.GetInt("enableTrucks") == 1) ? true : false;
     enableAudio.isOn = (PlayerPrefs.GetInt("enableAudio") == 1) ? true : false;
 
-    numRoads.value = PlayerPrefs.GetInt("numRoads") - 2;
+    numRoads.value = PlayerPrefs.GetInt("numRoads") - 3;
     numLanes.value = (PlayerPrefs.GetInt("numLanes") / 2) - 1;
   }
 
@@ -40,7 +40,7 @@ public class OptionsMenu : MonoBehaviour
     PlayerPrefs.SetInt("enableAudio", enableAudio.isOn ? 1 : 0);
 
     // Pad the values by 2 sinces there is no 0 and 1.
-    PlayerPrefs.SetInt("numRoads", numRoads.value + 2);
+    PlayerPrefs.SetInt("numRoads", numRoads.value + 3);
     PlayerPrefs.SetInt("numLanes", (numLanes.value + 1) * 2);
   }
 
@@ -52,7 +52,7 @@ public class OptionsMenu : MonoBehaviour
   }
 
   public void UpdateSpeedValue()
-    {
-    	sliderText.text = speedSlider.value.ToString() + " km/hr";
-    }
+  {
+    sliderText.text = speedSlider.value.ToString() + " km/hr";
+  }
 }

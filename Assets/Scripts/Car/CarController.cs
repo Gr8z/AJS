@@ -200,7 +200,7 @@ public class CarController : MonoBehaviour
 
     //Get the steering angle from the PID controller
     float wantedSteeringAngle = PIDScript.GetSteerFactorFromPIDController(CTE);
-    
+
     //Limit the steering angle because the angle from the PID controller can be infinite
     //Get the angle between the car's forward vector and the vector between the car and the waypoint we are steering towards
     //This angle is always between 0 and 180 degrees
@@ -262,7 +262,7 @@ public class CarController : MonoBehaviour
 
     //Slow down before we come to the intersection and if the car can move through the intersection
     float distToWp = (currentWaypoint.pos - transform.position).magnitude;
-    
+
     if (currentWaypoint.isStop && distToWp < 10f && currentSpeed > maxIntersectionSpeed && hasClearPath)
     {
       motorTorque = 0f;
