@@ -36,12 +36,23 @@ public class SpawnCars : MonoBehaviour
   void Start()
   {
 
-    Debug.Log("SpawnCars active");
-    //Combine all cars into one list
-    allCarsList.Add(modelSObj);
-    allCarsList.Add(modelXObj);
-    allCarsList.Add(roadsterObj);
+    // Add Model s Models
+    if (PlayerPrefs.GetInt("enableModelS") == 1)
+    {
+      allCarsList.Add(modelSObj);
+    }
 
+    // Add Model X Models
+    if (PlayerPrefs.GetInt("enableModelX") == 1)
+    {
+      allCarsList.Add(modelXObj);
+    }
+
+    // Add Roadster Models
+    if (PlayerPrefs.GetInt("enableRoadster") == 1)
+    {
+      allCarsList.Add(roadsterObj);
+    }
 
     //Create the spawn point array
     int numLanes = PlayerPrefs.GetInt("numLanes");

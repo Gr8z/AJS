@@ -1981,7 +1981,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2166,12 +2166,12 @@ GameObject:
   - component: {fileID: 586251320}
   - component: {fileID: 586251321}
   m_Layer: 5
-  m_Name: TruckToggle
+  m_Name: Roadster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &586251320
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2190,7 +2190,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 193.1, y: 80.6}
+  m_AnchoredPosition: {x: 187.7, y: 80.62}
   m_SizeDelta: {x: 113.76, y: 24.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &586251321
@@ -3235,7 +3235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &763671620
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3276,9 +3276,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedSlider: {fileID: 25654733}
   sliderText: {fileID: 300712692}
-  enableSmallVehicles: {fileID: 1688745546}
-  enableBusses: {fileID: 1262351120}
-  enableTrucks: {fileID: 586251321}
+  enableModelS: {fileID: 1688745546}
+  enableModelX: {fileID: 1262351120}
+  enableRoadster: {fileID: 586251321}
   enableAudio: {fileID: 1646919028}
   numRoads: {fileID: 653661032}
   numLanes: {fileID: 155876634}
@@ -3523,8 +3523,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 22.04, y: -0.5}
-  m_SizeDelta: {x: -44.08, y: -3}
+  m_AnchoredPosition: {x: 26.46, y: -0.5}
+  m_SizeDelta: {x: -35.245285, y: -3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851424088
 MonoBehaviour:
@@ -3559,7 +3559,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Trucks
+  m_Text: Roadster
 --- !u!222 &851424089
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4271,7 +4271,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Buses
+  m_Text: Model X
 --- !u!222 &1007162394
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5004,12 +5004,12 @@ GameObject:
   - component: {fileID: 1262351119}
   - component: {fileID: 1262351120}
   m_Layer: 5
-  m_Name: BusToggle
+  m_Name: Model X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1262351119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5028,7 +5028,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.28, y: 80.62}
+  m_AnchoredPosition: {x: 6.88, y: 80.62}
   m_SizeDelta: {x: 113.76, y: 24.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1262351120
@@ -5885,7 +5885,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Small Vehicles
+  m_Text: Model S
 --- !u!222 &1498410208
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6324,7 +6324,7 @@ GameObject:
   - component: {fileID: 1688745545}
   - component: {fileID: 1688745546}
   m_Layer: 5
-  m_Name: SmallToggle
+  m_Name: Model S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6795,8 +6795,8 @@ RectTransform:
   m_Father: {fileID: 1448211941}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7197,7 +7197,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1840128273
 RectTransform:
   m_ObjectHideFlags: 0

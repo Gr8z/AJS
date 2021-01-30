@@ -9,9 +9,9 @@ public class OptionsMenu : MonoBehaviour
   public Slider speedSlider;
   public Text sliderText;
 
-  public Toggle enableSmallVehicles;
-  public Toggle enableBusses;
-  public Toggle enableTrucks;
+  public Toggle enableModelS;
+  public Toggle enableModelX;
+  public Toggle enableRoadster;
   public Toggle enableAudio;
 
   public TMP_Dropdown numRoads;
@@ -22,9 +22,9 @@ public class OptionsMenu : MonoBehaviour
   {
     speedSlider.value = PlayerPrefs.GetFloat("vehicleSpeed");
 
-    enableSmallVehicles.isOn = (PlayerPrefs.GetInt("enableSmallVehicles") == 1) ? true : false;
-    enableBusses.isOn = (PlayerPrefs.GetInt("enableBusses") == 1) ? true : false;
-    enableTrucks.isOn = (PlayerPrefs.GetInt("enableTrucks") == 1) ? true : false;
+    enableModelS.isOn = (PlayerPrefs.GetInt("enableModelS") == 1) ? true : false;
+    enableModelX.isOn = (PlayerPrefs.GetInt("enableModelX") == 1) ? true : false;
+    enableRoadster.isOn = (PlayerPrefs.GetInt("enableRoadster") == 1) ? true : false;
     enableAudio.isOn = (PlayerPrefs.GetInt("enableAudio") == 1) ? true : false;
 
     numRoads.value = PlayerPrefs.GetInt("numRoads") - 3;
@@ -34,9 +34,9 @@ public class OptionsMenu : MonoBehaviour
   public void clickDone()
   {
     PlayerPrefs.SetFloat("vehicleSpeed", speedSlider.value);
-    PlayerPrefs.SetInt("enableSmallVehicles", enableSmallVehicles.isOn ? 1 : 0);
-    PlayerPrefs.SetInt("enableBusses", enableBusses.isOn ? 1 : 0);
-    PlayerPrefs.SetInt("enableTrucks", enableTrucks.isOn ? 1 : 0);
+    PlayerPrefs.SetInt("enableModelS", enableModelS.isOn ? 1 : 0);
+    PlayerPrefs.SetInt("enableModelX", enableModelX.isOn ? 1 : 0);
+    PlayerPrefs.SetInt("enableRoadster", enableRoadster.isOn ? 1 : 0);
     PlayerPrefs.SetInt("enableAudio", enableAudio.isOn ? 1 : 0);
 
     // Pad the values by 2 sinces there is no 0 and 1.
