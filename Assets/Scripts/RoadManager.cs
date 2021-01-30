@@ -30,6 +30,10 @@ public class RoadManager : MonoBehaviour
 
     GameObject LanesToActivate = null;
 
+    // Speed up vehicles based on option
+    float speedSlider = PlayerPrefs.GetFloat("vehicleSpeed");
+    Time.timeScale = speedSlider * 0.01f + 1;
+
     switch (numRoads)
     {
       case 3:

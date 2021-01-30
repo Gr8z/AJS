@@ -60,12 +60,11 @@ public class SpawnCars : MonoBehaviour
   {
     spawnTimer += Time.deltaTime;
 
-    if (spawnTimer > timeUnitilNewCar && IntersectionManager.numberOfActiveCars < 50)
+    if (spawnTimer > timeUnitilNewCar && IntersectionManager.numberOfActiveCars < 100)
     {
       spawnTimer = 0f;
 
       SpawnCar();
-      Debug.Log("Spawned a car");
     }
 
   }
